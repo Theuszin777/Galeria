@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/20201tiimi0357/Desktop/AtvsMobile/Galeria/app/src/main/res/drawable/image_bg.xml" value="0.358" />
         <entry key="..\:/Users/20201tiimi0357/Desktop/AtvsMobile/Galeria/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/20201tiimi0357/Desktop/AtvsMobile/Galeria/app/src/main/res/layout/activity_photo.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/20201tiimi0357/Desktop/AtvsMobile/Galeria/app/src/main/res/layout/list_item.xml" value="0.365625" />
       </map>
     </option>
   </component>
