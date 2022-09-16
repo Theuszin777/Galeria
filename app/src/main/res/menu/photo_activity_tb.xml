@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/opCamera"
-        android:icon="@android:drawable/ic_menu_camera"
+        android:id="@+id/opShare"
+        android:icon="?attr/actionModeShareDrawable"
         android:title="Tirar Foto"
         app:showAsAction="ifRoom" />
 </menu>
