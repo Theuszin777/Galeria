@@ -5,6 +5,7 @@
 
     <uses-feature android:name="android.hardware.camera" android:required="true"/>
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18"/>
 
     <application
         android:allowBackup="true"
@@ -37,7 +38,7 @@
 
 
         <provider
-            android:authorities="magnago.matheus.galeria.fileprovader"
+            android:authorities="magnago.matheus.galeria.fileprovider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

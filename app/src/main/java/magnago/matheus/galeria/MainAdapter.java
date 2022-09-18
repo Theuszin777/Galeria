@@ -41,17 +41,15 @@ public class MainAdapter extends RecyclerView.Adapter {
     // Preenche o Image View com a foto correspondente.
     // Possível ERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
     @Override
-    public void onBindViewHolder (@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder (@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
         // Obtenção das dimensões -> Width = largura
         ImageView imPhoto = holder.itemView.findViewById(R.id.imItem);
-            int w = (int) mainActivity.getResources().getDimension(R.dimen.itemWidth);
+        int w = (int) mainActivity.getResources().getDimension(R.dimen.itemWidth);
         // Obtenção das dimensões -> height = altura
-        mainActivity.getResources().getDimension(R.dimen.itemWidth);
-            int h = (int) mainActivity.getResources().getDimension(R.dimen.itemHeight);
+        int h = (int) mainActivity.getResources().getDimension(R.dimen.itemHeight);
         //Escalonamento da imagem para casar com os tamanhos definidos na Image View.
-        mainActivity.getResources().getDimension(R.dimen.itemHeight);
-            Bitmap bitmap = Utils.getScaledBitmap(photos.get(position), w, h);
+        Bitmap bitmap = Utils.getScaledBitmap(photos.get(position), w, h);
 
         imPhoto.setImageBitmap(bitmap);
         // Definição do que ocorre ao clicar em uma imagem.

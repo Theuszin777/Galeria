@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.tbMain);
         setSupportActionBar(toolbar);
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         permissions.add(Manifest.permission.CAMERA);
         checkForPermissions(permissions);
 
-        setContentView(R.layout.activity_main);
         //Acessar e ler o diretório das pictures.
         File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File[] files = dir.listFiles();
@@ -75,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
         rvGallery.setLayoutManager(gridLayoutManager);
 
     }
-    
+
+    @Override
     public boolean onCreateOptionsMenu (Menu menu) {
 
         super.onCreateOptionsMenu(menu);
@@ -94,10 +95,11 @@ public class MainActivity extends AppCompatActivity {
                 dispatchTakePictureIntent();
                 return true;
             default:
-
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
     // Chama o app de câmera.
     private void dispatchTakePictureIntent() {
         // Criação do arquivo vazio dentro da pasta Pictures.
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (f != null) {
             // Gera um endereço URI.
-            Uri fUri = FileProvider.getUriForFile(MainActivity.this, "trindade.daniel.galeria.fileprovider", f);
+            Uri fUri = FileProvider.getUriForFile(MainActivity.this, "magnago.matheus.galeria.fileprovider", f);
             //  Intenção para acionar a app de câmera.
             Intent i = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
             // URI passado para a app de câmera.

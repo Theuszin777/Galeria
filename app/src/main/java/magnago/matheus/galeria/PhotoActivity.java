@@ -41,15 +41,16 @@ public class PhotoActivity extends AppCompatActivity {
         imPhoto.setImageBitmap(bitmap);
     }
 
+    @Override
     public boolean onCreateOptionsMenu (Menu menu) {
 
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.photo_activity_tb, menu);
-
         return true;
 
     }
+
 
     // Def. Compartilhamento
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
