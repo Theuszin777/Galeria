@@ -1,5 +1,6 @@
 package magnago.matheus.galeria;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,24 +34,24 @@ public class MainAdapter extends RecyclerView.Adapter {
 
         // Constrói uma view baseado nas regras do arquivo e em seguida o armazena.
         View v = inflater.inflate(R.layout.list_item, parent, false);
-        return new MyViewHolder(v);
+        return new ViewHolder(v);
 
     }
 
     // Preenche o Image View com a foto correspondente.
-
+    // Possível ERROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
     @Override
-    public void onBindViewHolder (@NonNull RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder (@NonNull RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         // Obtenção das dimensões -> Width = largura
         ImageView imPhoto = holder.itemView.findViewById(R.id.imItem);
-            int w = (int)
+            int w = (int) mainActivity.getResources().getDimension(R.dimen.itemWidth);
         // Obtenção das dimensões -> height = altura
         mainActivity.getResources().getDimension(R.dimen.itemWidth);
-            int h = (int)
+            int h = (int) mainActivity.getResources().getDimension(R.dimen.itemHeight);
         //Escalonamento da imagem para casar com os tamanhos definidos na Image View.
         mainActivity.getResources().getDimension(R.dimen.itemHeight);
-            Bitmap bitmap = Utils.getBitmap(photos.get(position), w, h);
+            Bitmap bitmap = Utils.getScaledBitmap(photos.get(position), w, h);
 
         imPhoto.setImageBitmap(bitmap);
         // Definição do que ocorre ao clicar em uma imagem.

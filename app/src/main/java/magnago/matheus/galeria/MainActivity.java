@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.tbMain);
         setSupportActionBar(toolbar);
 
+        List<String> permissions = new ArrayList<>();
+        permissions.add(Manifest.permission.CAMERA);
+        checkForPermissions(permissions);
+
         setContentView(R.layout.activity_main);
         //Acessar e ler o diretório das pictures.
         File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -61,16 +65,14 @@ public class MainActivity extends AppCompatActivity {
         mainAdapter = new MainAdapter(MainActivity.this, photos);
         RecyclerView rvGallery = findViewById(R.id.rvGallery);
         rvGallery.setAdapter(mainAdapter);
+
         // Calculam o número máximo da coluna de fotos que cabem na tela do celular.
         float w = getResources().getDimension(R.dimen.itemWidth);
-        int numberOfColumns = Utils.calculateNoOfColumns(MainActivity.this, w);
+        int numberOfColumns = Utils.calculateNumberOfColumns(MainActivity.this, w);
+
         // Configuram o RecycleView para exibir as fotos em GRID.
         GridLayoutManager gridLayoutManager = new GridLayoutManager(MainActivity.this, numberOfColumns);
         rvGallery.setLayoutManager(gridLayoutManager);
-
-        List<String> permissions = new ArrayList<>();
-        permissions.add(Manifest.permission.CAMERA);
-        checkForPermissions(permissions);
 
     }
     

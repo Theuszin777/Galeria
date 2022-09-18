@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import java.io.File;
 
 public class PhotoActivity extends AppCompatActivity {
-    
+
     String photoPath;
     
     @Override
@@ -30,7 +30,7 @@ public class PhotoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-            actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
             
         // Recebe o caminha da foto que foi enviado pelo MainActivity.    
         Intent i = getIntent();
