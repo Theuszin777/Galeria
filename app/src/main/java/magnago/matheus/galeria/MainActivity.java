@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
     public void startPhotoActivity(String photoPath) {
 
         Intent i = new Intent(MainActivity.this, PhotoActivity.class);
-        i.putExtra("Photo_path", photoPath);
+        i.putExtra("photo_path", photoPath);
 
         startActivity(i);
 
